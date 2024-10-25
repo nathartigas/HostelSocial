@@ -8,172 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-        /* Cores principais */
-        :root {
-            --black: #000000;
-            --yellow: #EEC924;
-            --pink: #EC65AD;
-            --blue: #0D6BCB;
-            --white: #FFFFFF;
-        }
-
-        body {
-            background-color: var(--white);
-            color: var(--black);
-            font-family: "Roboto Slab", serif;
-            scroll-behavior: smooth;
-        }
-
-        .navbar {
-            background-color: var(--black);
-            padding: 15px 0;
-        }
-
-        .navbar-brand img {
-            width: 80px;
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--white);
-            font-weight: bold;
-        }
-
-        .nav-link:hover {
-            color: var(--yellow);
-        }
-
-        /* Mudando a cor dos três risquinhos (navbar-toggler) */
-        .navbar-toggler {
-            border-color: transparent;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-
-        .header {
-            height: 100vh;
-            background-image: url('/img/fundoHostel.jpg'); /* Adicione sua imagem de fundo aqui */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .header h1 {
-            font-size: 4rem;
-            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            animation: slideDown 2s ease;
-        }
-
-        .btn-main {
-            background-color: var(--blue);
-            color: var(--white);
-            border-radius: 50px;
-            padding: 12px 30px;
-            margin-top: 20px;
-            transition: 0.4s;
-        }
-
-        .btn-main:hover {
-            background-color: var(--pink);
-            color: var(--white);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--yellow);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .about-section,
-        .day-trips-section,
-        .gallery-section {
-            text-align: justify;
-            padding: 80px 0;
-        }
-
-        .location-section {
-            background-color: var(--black);
-            color: var(--white);
-            background-attachment: fixed;
-        }
-
-        .location-section p,
-        iframe {
-            animation: fadeUp 2s;
-        }
-
-        .day-trips-section .card {
-            background-color: var(--yellow);
-            transition: transform 0.5s, box-shadow 0.5s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .day-trips-section .card:hover {
-            transform: translateY(-10px) rotate(-1deg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer {
-            background-color: var(--black);
-            padding: 30px 0;
-            color: var(--white);
-        }
-
-        .footer a {
-            color: var(--yellow);
-        }
-
-        /* Animações */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDown {
-            0% {
-                transform: translateY(-100px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeUp {
-            0% {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logoHostel.png" alt="Hostel Social Logo"> <!-- Substitua a imagem do logo -->
+                <img src="img/logoHostel.png" alt="Hostel Social Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -181,10 +24,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">História</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#day-trips">Day Trips</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#location">Localidade</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" id="history-link">História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#day-trips" id="day-trips-link">Day Trips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery" id="gallery-link">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location" id="location-link">Localidade</a></li>
+                    <!-- Opção de idioma -->
+                    <li class="nav-item">
+                        <select id="language-switcher">
+                            <option value="pt">Português</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -193,86 +44,91 @@
     <!-- Header -->
     <header class="header">
         <div>
-            <h1>Hostel Social</h1>
-            <p>Hostel é melhor que Tinder!</p>
-            <a href="#about" class="btn btn-main">Descubra mais</a>
+            <h1 id="header-title">Hostel Social</h1>
+            <p id="header-subtitle">Hostel é melhor que Tinder!</p>
+            <a href="#about" class="btn btn-main" id="header-button">Descubra mais</a>
         </div>
     </header>
 
     <!-- História -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">Nossa História</h2>
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, non omnis, pariatur reiciendis adipisci accusantium fugiat repellendus quibusdam delectus libero temporibus. Laborum cupiditate, ex dolorem repudiandae doloremque, neque vel fugiat ullam in quo deleniti. Eos nulla quam porro labore saepe exercitationem ex. Itaque ipsum quae voluptatem repellendus reiciendis repudiandae earum numquam quisquam velit, alias, expedita, ipsam voluptatibus perferendis. Dicta, quae?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores dolorem repellendus quae! Quis facere laborum sequi deserunt provident dolorem, labore ratione in veritatis consequuntur soluta placeat voluptatum reprehenderit totam eius? Quod aliquam quasi ducimus minima commodi tempora. Iste, natus, dolorum, voluptas adipisci inventore cumque earum vitae possimus pariatur atque reprehenderit! Quidem cumque at voluptates? Quam animi vitae aut tempore omnis molestias explicabo mollitia laudantium eos consequatur velit ipsum quos, fuga illum eaque reprehenderit expedita facilis sunt placeat a voluptate harum repudiandae! Aliquid, quasi facere magnam repudiandae minima expedita id nisi consectetur natus, assumenda, voluptate corporis eius laboriosam mollitia placeat vero tenetur? Amet rem saepe nam nisi magni esse assumenda hic aliquam. Fuga alias numquam sint excepturi ex odit a, quas, explicabo nesciunt voluptatibus nam labore inventore cum dolore enim perspiciatis maxime saepe neque eligendi assumenda. Voluptatum dolore necessitatibus, quisquam dignissimos sunt delectus nesciunt praesentium illum vel ad repellendus architecto nam facere? Eum aut ipsum .</p>
+            <h2 class="section-title" id="about-title">Nossa História</h2>
+            <p class="text-center" id="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consequuntur, non omnis, pariatur reiciendis adipisci accusantium fugiat repellendus quibusdam delectus
+                libero temporibus...</p>
         </div>
     </section>
 
     <!-- Day Trips -->
-    <!-- Day Trips -->
-<section id="day-trips" class="day-trips-section">
-    <div class="container">
-        <h2 class="section-title">Day Trips</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/DayTrip1.png" class="card-img-top" alt="Trip 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Ilha Do Mel</h5>
-                        <p class="card-text">Para quem não conhece a Ilha do Mel é um paraíso do nosso litoral! Não há carros nem rodovias, apenas trilhas de areia, pouco sinal de celular, ou seja, é um convite para a conexão com a natureza e com a turma que vai estar no rolê! Vamos curtir um dia de praia, trilhas, e muita vibe boa.  </p>
+    <section id="day-trips" class="day-trips-section">
+        <div class="container">
+            <h2 class="section-title" id="day-trips-title">Day Trips</h2>
+            <div class="row">
+                <div class="col-md-4 card-trip" id="card-trip-1">
+                    <div class="card">
+                        <img src="img/DayTrip1.png" class="card-img-top" alt="Trip 1">
+                        <div class="card-body">
+                            <h5 class="card-title" id="trip-1-title">Ilha Do Mel</h5>
+                            <p class="card-text" id="trip-1-text">Para quem não conhece a Ilha do Mel é um paraíso do nosso litoral...<p>
+                            <button type="button" class="btn btn-primary">Faça Sua Reserva</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/DayTrip2.png" class="card-img-top" alt="Trip 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Morretes</h5>
-                        <p class="card-text">Considerado um dos 10 passeios de trem mais lindos do mundo, o trem até Morretes te convida a uma imersão na Mata Atlântica e na história. Saímos do Social em direção á rodoferroviária onde embarcaremos no Trem da Serra Verde Express na classe turística.  </p>
+                
+                <div class="col-md-4 card-trip" id="card-trip-2">
+                    <div class="card">
+                        <img src="img/DayTrip2.png" class="card-img-top" alt="Trip 2">
+                        <div class="card-body">
+                            <h5 class="card-title" id="trip-2-title">Morretes</h5>
+                            <p class="card-text" id="trip-2-text">Considerado um dos 10 passeios de trem mais lindos do mundo...</p>
+                            <button type="button" class="btn btn-primary">Faça Sua Reserva</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/DayTrip3.png" class="card-img-top" alt="Trip 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Buraco do Padre</h5>
-                        <p class="card-text">Para quem não conhece, é um dos mais impressionantes monumentos naturais do mundo: uma cachoeira com cerca de 30 metros de altura que deságua em um anfiteatro rochoso (furna) e forma um pequeno lago de fundo arenoso. </p>
+                
+                <div class="col-md-4 card-trip" id="card-trip-3">
+                    <div class="card">
+                        <img src="img/DayTrip3.png" class="card-img-top" alt="Trip 3">
+                        <div class="card-body">
+                            <h5 class="card-title" id="trip-3-title">Balneário Camboriú</h5>
+                            <p class="card-text" id="trip-3-text">Com certeza você já ouviu falar do paraíso de Camboriú...</p>
+                            <button type="button" class="btn btn-primary">Faça Sua Reserva</button>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Galeria -->
     <section id="gallery" class="gallery-section">
         <div class="container">
-            <h2 class="section-title">Galeria</h2>
-            <div class="row">
-                <div class="col-md-4"><img src="img/DayTrip1.png" class="img-fluid"></div>
-                <div class="col-md-4"><img src="img/DayTrip2.png" class="img-fluid"></div>
-                <div class="col-md-4"><img src="img/DayTrip3.png" class="img-fluid"></div>
-            </div>
+            <h2 class="section-title" id="gallery-title">Galeria</h2>
+            <p id="gallery-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur...</p>
         </div>
     </section>
 
     <!-- Localidade -->
     <section id="location" class="location-section">
         <div class="container">
-            <h2 class="section-title">Nossa Localização</h2>
-            <p class="text-center">Estamos localizados no coração da cidade!</p>
-            <iframe src="https://www.google.com/maps" width="100%" height="450"></iframe>
+            <h2 class="section-title" id="location-title">Localização</h2>
+            <p id="location-text">Avenida Central, 123 - Centro - Balneário Camboriú</p>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2024 Hostel Social. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Hostel Social - <a href="#">Política de Privacidade</a></p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
