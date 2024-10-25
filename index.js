@@ -79,3 +79,5 @@ switcher.addEventListener('change', function () {
         }
     });
 });
+
+//teste lorenzo git
