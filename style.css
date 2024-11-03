@@ -53,8 +53,9 @@ body {
     margin: 0 auto;
 }
 
-.text-center {
-    text-align: center;
+#text-center {
+    text-align: justify;
+
 }
 
 .btn {
@@ -69,6 +70,11 @@ body {
 
 .btn:hover {
     background-color: #EC65AD;
+}
+
+.mapa-google {
+    border-radius: 20px;
+    
 }
 
 .nav-link {
@@ -127,8 +133,8 @@ body {
 
 .header {
     height: 100vh;
-    background-image: url('/img/fundoHostel.jpg');
-    background-size: cover;
+    background-image: url('/img/fundoHS.svg');
+    background-size: 110%;
     background-position: center;
     display: flex;
     justify-content: center;
@@ -163,6 +169,7 @@ body {
     color: var(--black);
     text-align: center;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .about-section,
@@ -177,11 +184,32 @@ body {
     color: var(--white);
     background-attachment: fixed;
 }
+
 .day-trips-section {
-    background: linear-gradient(to left, rgb(194, 102,230), #cfc539, #0049bd);
-    /* background-color: var(--black); */
+    position: relative;
+    background: linear-gradient(to left, rgb(194, 102, 230), #cfc539, #0049bd);
     color: var(--white);
     background-attachment: fixed;
+    padding: 20px;
+}
+
+/*testando escurecimento de imagem de fundo*/
+
+.day-trips-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+    pointer-events: none; 
+}
+
+.day-trips-section > * {
+    position: relative;
+    z-index: 2;
 }
 
 .location-section {
@@ -194,18 +222,30 @@ body {
     /* background-color: #0D6BCB; Azul */
     background-color: #000000;
     color: var(--white);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 #card-trip-2 .card {
     /* background-color: #EC65AD; Rosa */
     background-color: #000000;
     color: var(--white);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 #card-trip-3 .card {
     /* background-color: #EEC924; Amarelo */
     background-color: #000000;
     color: var(--white);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.card-img-top {
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 /* Adicione sombras e transições para todos os cards */
@@ -270,15 +310,10 @@ body {
     content: "";
     background: linear-gradient(
         45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
+        #fcfa7b,
+        #5b6bc0,
+        #efb2f0,
+        #f0e5b2
     );
     position: absolute;
     top: -2px;
