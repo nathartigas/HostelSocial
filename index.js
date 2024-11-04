@@ -80,4 +80,43 @@ switcher.addEventListener('change', function () {
     });
 });
 
-//teste lorenzo git
+//teste lorenzo git VVV
+
+function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight && rect.bottom > 0
+    );
+}
+
+function onScroll() {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+        if (isElementPartiallyInViewport(section)) {
+            section.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", onScroll);
+document.addEventListener("DOMContentLoaded", onScroll);
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute("href"); 
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = targetPosition - 100; 
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});

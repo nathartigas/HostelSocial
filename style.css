@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Text+Me+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 /*teste lorenzo git*/
 /* Cores principais */
@@ -10,11 +11,43 @@
     --white: #FFFFFF;
 }
 
+strong {
+    color: rgb(163, 13, 174)
+}
+
+#GITHUB {
+    text-decoration: none;
+    color:#3c8ce1;
+    transition: 0.5s;
+}
+
+#GITHUB1 {
+    text-decoration: none;
+    color:#fc60ff;
+    transition: 0.5s;
+}
+
+#GITHUB:hover {
+    padding:9px;
+    font-size: 20px;
+    border-radius: 12px;
+    background: linear-gradient(to left, rgb(25, 13, 91), rgb(247, 113, 30), rgb(130, 10, 143));
+}
+
+
 body {
     background-color: var(--white);
     color: var(--black);
-    font-family: "Roboto Slab", serif;
     scroll-behavior: smooth;
+    background:#626262;
+}
+
+button, select {
+    margin-top: 6px;
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 2px solid rgb(82, 82, 82);
 }
 
 
@@ -25,10 +58,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid white;
+    font-family: "Righteous", sans-serif;
+    font-size: 20px;
 }
 
 .navbar-brand img {
     width: 80px;
+}
+
+button.navbar-toggler {
+    border: 1px solid white;
 }
 
 /* Estilizando o seletor de idioma */
@@ -55,6 +95,8 @@ body {
 
 #text-center {
     text-align: justify;
+    font-family: "Text Me One", sans-serif;
+    font-size: 23px;
 
 }
 
@@ -73,8 +115,7 @@ body {
 }
 
 .mapa-google {
-    border-radius: 20px;
-    
+    border-radius: 7px;
 }
 
 .nav-link {
@@ -142,25 +183,48 @@ body {
     text-align: center;
     color: var(--white);
     animation: fadeIn 1.5s ease-in-out;
+
 }
 
 .header h1 {
     font-size: 4rem;
     text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     animation: slideDown 2s ease;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 900;
+}
+
+/* Animação de pulinho */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Define a altura do pulo */
+    }
+}
+
+/* Aplica a animação ao título */
+#header-title {
+    display: inline-block;
+    animation: jump 2s ease-in-out infinite; /* Animação contínua com um intervalo de 1 segundo */
+    color: #ffffff; /* Pode ajustar a cor ou remover */
+    font-weight: bold;
 }
 
 .btn-main {
-    background-color: var(--blue);
+    background-color: black;
+    border: 1px solid rgb(255, 255, 255);
     color: var(--white);
     border-radius: 50px;
     padding: 12px 30px;
     margin-top: 20px;
     transition: 0.4s;
+    box-shadow: rgb(247, 0, 255) 0px 2px 4px 2px, rgb(247, 0, 255) 0px 2px 16px 5px;
 }
 
 .btn-main:hover {
-    background-color: var(--pink);
+    background-color: rgb(102, 0, 108);
     color: var(--white);
 }
 
@@ -170,6 +234,14 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     color: white;
+    font-family: "Righteous", sans-serif;
+}
+
+#texto-gal {
+    background-color: #00000080;
+    border-radius: 12px;
+    width: 70%;
+    backdrop-filter: blur(2px);
 }
 
 .about-section,
@@ -177,6 +249,30 @@ body {
 .gallery-section {
     text-align: justify;
     padding: 80px 0;
+}
+
+.gallery-section {
+    background: linear-gradient(black, rgb(60, 60, 60));
+}
+
+.carousel-control-prev-icon {
+    background-color: #000000;
+    height: 60px;
+    border-radius: 15px;
+    width: 50px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.carousel-control-next-icon {
+    background-color: #000000;
+    height: 60px;
+    border-radius: 15px;
+    width: 50px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#imgca {
+    border-radius: 10px;
 }
 
 .about-section{
@@ -218,12 +314,30 @@ body {
     background-attachment: fixed;
 }
 
+.card-title {
+    text-align: center;
+    font-family: "Righteous", sans-serif;
+    font-size: 30px;
+}
+
+.card-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Text Me One", sans-serif;
+    font-size: 18px;
+}
+
 #card-trip-1 .card {
     /* background-color: #0D6BCB; Azul */
     background-color: #000000;
     color: var(--white);
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#sm {
+    text-decoration: none;
+    color: var(--white);
 }
 
 #card-trip-2 .card {
@@ -299,11 +413,12 @@ body {
     position: relative;
     z-index: 0;
     border-radius: 10px;
-    width: 100%; 
     max-width: 300px; 
     height: 40px;
-    border: 1px solid rgb(78, 78, 78);
-    font-size: 1rem;
+    border: 1px solid rgb(195, 195, 195);
+    font-size: 0.9rem;
+    margin-left: 20px;
+
 }
 
 .bn5:before {
@@ -363,4 +478,38 @@ body {
     left: 0;
     top: 0;
     border-radius: 10px;
+}
+
+/* Estilização do botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 1000;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+}
+
+/* Estilo inicial das seções escondidas */
+section {
+    opacity: 0;
+    transform: translateY(20px); /* Move a seção ligeiramente para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suaviza a transição */
+}
+
+/* Estilo das seções visíveis */
+section.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move a seção para a posição original */
 }
